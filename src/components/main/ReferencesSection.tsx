@@ -81,7 +81,7 @@ export default function ReferencesSection() {
                 key={index}
                 className="h-[300px] bg-[#001A3D] rounded-lg p-8 flex flex-col justify-between"
                 style={{
-                  backgroundImage: 'url(/images/dron.png)',
+                  backgroundImage: 'url(/images/main/dron.png)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}

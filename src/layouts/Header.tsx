@@ -38,7 +38,7 @@ export default function Header() {
         {/* 로고 (왼쪽) */}
         <div className="flex-1 flex justify-start">
           <Link href="/">
-            <Image src="/images/hani-logo.svg" alt="HANI Logo" width={112} height={56} />
+            <Image src="/images/common/hani-logo.svg" alt="HANI Logo" width={112} height={56} />
           </Link>
         </div>
 
@@ -78,7 +78,7 @@ export default function Header() {
         <div className="flex-1 flex justify-end">
           <button className="w-10 h-10">
             <Image
-              src="/images/menu-icon.svg"
+              src="/images/common/menu-icon.svg"
               alt="Menu"
               width={32}
               height={32}
