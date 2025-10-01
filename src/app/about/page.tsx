@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Tabs } from '@/components/common';
-import { CompanyOverview } from '@/components/about';
+import { CompanyOverview, CompanyHistory } from '@/components/about';
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -55,22 +55,7 @@ export default function AboutPage() {
       <div className="pt-12 pb-0">
         {/* 탭 콘텐츠 */}
         {activeTab === 'overview' && <CompanyOverview />}
-        {activeTab === 'history' && (
-          <div>
-            <h2
-              className="text-[32px] font-bold text-black mb-6"
-              style={{ fontFamily: 'Gothic A1' }}
-            >
-              연혁
-            </h2>
-            <p
-              className="text-[18px] text-gray-700 leading-relaxed"
-              style={{ fontFamily: 'Gothic A1' }}
-            >
-              여기에 연혁 컴포넌트를 렌더링합니다.
-            </p>
-          </div>
-        )}
+        {activeTab === 'history' && <CompanyHistory />}
         {activeTab === 'vision' && (
           <div>
             <h2
