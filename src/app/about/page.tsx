@@ -1,10 +1,11 @@
 'use client';
 
+import { Suspense } from 'react';
 import { Tabs } from '@/components/common';
 import { CompanyOverview, CompanyHistory, SocialValue } from '@/components/about';
 import { useTabState } from '@/hooks';
 
-export default function AboutPage() {
+function AboutContent() {
   const [activeTab, setActiveTab] = useTabState('overview');
 
   const tabs = [
@@ -75,5 +76,13 @@ export default function AboutPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function AboutPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutContent />
+    </Suspense>
   );
 }
