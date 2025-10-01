@@ -9,10 +9,13 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // MainBannerSection 하단 근처에서 배경색 변경 (하단 - 200px)
+      // 메인 배너 또는 페이지 배너 하단 근처에서 배경색 변경
       const mainBanner = document.getElementById('main-banner');
-      if (mainBanner) {
-        const rect = mainBanner.getBoundingClientRect();
+      const pageBanner = document.getElementById('page-banner');
+      const banner = mainBanner || pageBanner;
+
+      if (banner) {
+        const rect = banner.getBoundingClientRect();
         const bannerBottom = rect.bottom + window.scrollY - 100;
         setIsScrolled(window.scrollY > bannerBottom);
       }

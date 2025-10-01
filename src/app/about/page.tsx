@@ -18,6 +18,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       {/* 배너 섹션 */}
       <section
+        id="page-banner"
         className="h-[800px] pt-20"
         style={{
           backgroundImage: 'url(/images/about/about-bg.svg)',
