@@ -9,7 +9,7 @@ export default function CTASection() {
       {/* 배경 이미지 */}
       <div className="absolute inset-0">
         <Image
-          src="/images/cta-bg.png"
+          src="/images/main/cta-bg.png"
           alt="CTA background"
           fill
           className="object-cover rounded-[20px]"

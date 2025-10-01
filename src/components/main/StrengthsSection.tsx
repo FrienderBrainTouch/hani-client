@@ -7,19 +7,19 @@ export default function StrengthsSection() {
     {
       title: 'Reliability',
       description: '다수의 정부지원 과제를 성공적으로 수행하며\n검증된 신뢰를 확보했습니다.',
-      image: '/images/reliability-bg.png',
+      image: '/images/main/reliability-bg.png',
       hasBorder: true,
     },
     {
       title: 'Technology',
       description: '데이터와 AI를 결합한\n최적의 기술 솔루션을 제공합니다.',
-      image: '/images/technology-bg-40b7d9.png',
+      image: '/images/main/technology-bg-40b7d9.png',
       hasBorder: false,
     },
     {
       title: 'Scalability',
       description: '교육, 심리, 산업 등 여러 분야로\n적용 가능한 확장성을 지니고 있습니다.',
-      image: '/images/scalability.svg',
+      image: '/images/main/scalability.svg',
       hasBorder: false,
     },
   ];
@@ -29,7 +29,7 @@ export default function StrengthsSection() {
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/main-bg-03.svg"
+          src="/images/main/main-bg-03.svg"
           alt="Strengths background"
           fill
           className="object-cover"

@@ -7,7 +7,7 @@ export default function MainBannerSection() {
       <section
         className="h-[1000px] bg-[#001A3D]"
         style={{
-          backgroundImage: 'url(/images/main-bg-01.svg)',
+          backgroundImage: 'url(/images/main/main-bg-01.svg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -34,7 +34,7 @@ export default function MainBannerSection() {
       <section
         className="bg-black/50 py-20"
         style={{
-          backgroundImage: 'url(/images/main-bg-02.svg)',
+          backgroundImage: 'url(/images/main/main-bg-02.svg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
