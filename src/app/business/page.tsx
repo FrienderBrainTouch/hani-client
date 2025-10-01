@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 
-export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState('overview');
+export default function BusinessPage() {
+  const [activeTab, setActiveTab] = useState('ai');
 
   const tabs = [
-    { id: 'overview', label: '회사 개요' },
-    { id: 'history', label: '연혁' },
-    { id: 'vision', label: '비전' },
-    { id: 'location', label: '오시는 길' },
+    { id: 'ai', label: 'AI 연구개발' },
+    { id: 'vr', label: 'VR 콘텐츠' },
+    { id: 'web', label: '웹/앱 개발' },
+    { id: 'consulting', label: '컨설팅' },
   ];
 
   return (
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* 페이지 타이틀 */}
         <h1 className="text-[48px] font-bold text-black mb-12" style={{ fontFamily: 'Gothic A1' }}>
-          회사소개
+          사업영역
         </h1>
 
         {/* 탭 네비게이션 */}
@@ -40,67 +40,67 @@ export default function AboutPage() {
 
         {/* 탭 콘텐츠 */}
         <div className="py-8">
-          {activeTab === 'overview' && (
+          {activeTab === 'ai' && (
             <div>
               <h2
                 className="text-[32px] font-bold text-black mb-6"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                회사 개요
+                AI 연구개발
               </h2>
               <p
                 className="text-[18px] text-gray-700 leading-relaxed"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                여기에 회사 개요 컴포넌트를 렌더링합니다.
+                여기에 AI 연구개발 컴포넌트를 렌더링합니다.
               </p>
             </div>
           )}
-          {activeTab === 'history' && (
+          {activeTab === 'vr' && (
             <div>
               <h2
                 className="text-[32px] font-bold text-black mb-6"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                연혁
+                VR 콘텐츠
               </h2>
               <p
                 className="text-[18px] text-gray-700 leading-relaxed"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                여기에 연혁 컴포넌트를 렌더링합니다.
+                여기에 VR 콘텐츠 컴포넌트를 렌더링합니다.
               </p>
             </div>
           )}
-          {activeTab === 'vision' && (
+          {activeTab === 'web' && (
             <div>
               <h2
                 className="text-[32px] font-bold text-black mb-6"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                비전
+                웹/앱 개발
               </h2>
               <p
                 className="text-[18px] text-gray-700 leading-relaxed"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                여기에 비전 컴포넌트를 렌더링합니다.
+                여기에 웹/앱 개발 컴포넌트를 렌더링합니다.
               </p>
             </div>
           )}
-          {activeTab === 'location' && (
+          {activeTab === 'consulting' && (
             <div>
               <h2
                 className="text-[32px] font-bold text-black mb-6"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                오시는 길
+                컨설팅
               </h2>
               <p
                 className="text-[18px] text-gray-700 leading-relaxed"
                 style={{ fontFamily: 'Gothic A1' }}
               >
-                여기에 오시는 길 컴포넌트를 렌더링합니다.
+                여기에 컨설팅 컴포넌트를 렌더링합니다.
               </p>
             </div>
           )}
