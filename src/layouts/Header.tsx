@@ -1,74 +1,89 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // MainBannerSection 하단 근처에서 배경색 변경 (하단 - 200px)
+      const mainBanner = document.getElementById('main-banner');
+      if (mainBanner) {
+        const rect = mainBanner.getBoundingClientRect();
+        const bannerBottom = rect.bottom + window.scrollY - 100;
+        setIsScrolled(window.scrollY > bannerBottom);
+      }
+    };
+
+    // 초기 실행 및 스크롤 이벤트 등록
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-sm border-b border-white/20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* 로고 */}
-          <Link href="/" className="flex items-center group">
-            <Image
-              src="/images/logo.svg"
-              alt="프랜더 로고"
-              width={131}
-              height={54}
-              priority
-              className="h-12 w-auto group-hover:opacity-80 transition-opacity"
-            />
+    <header
+      className={`fixed inset-x-0 top-0 z-50 h-16 transition-colors duration-300 ${
+        isScrolled ? 'bg-[#001A3D]' : 'bg-transparent'
+      }`}
+    >
+      <div className="flex items-center h-full px-10">
+        {/* 로고 (왼쪽) */}
+        <div className="flex-1 flex justify-start">
+          <Link href="/">
+            <Image src="/images/hani-logo.svg" alt="HANI Logo" width={112} height={56} />
           </Link>
+        </div>
 
-          {/* 네비게이션 메뉴 */}
-          <nav className="hidden md:flex items-center space-x-12">
-            <Link
-              href="/about"
-              className="text-gray-800 font-semibold hover:text-green-600 transition-colors text-lg"
-            >
-              회사소개
-            </Link>
-            <Link
-              href="/content"
-              className="text-gray-800 font-semibold hover:text-green-600 transition-colors text-lg"
-            >
-              콘텐츠
-            </Link>
-            <Link
-              href="/training"
-              className="text-gray-800 font-semibold hover:text-green-600 transition-colors text-lg"
-            >
-              전문가 양성
-            </Link>
-            <Link
-              href="/gallery"
-              className="text-gray-800 font-semibold hover:text-green-600 transition-colors text-lg"
-            >
-              활동 갤러리
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-800 font-semibold hover:text-green-600 transition-colors text-lg"
-            >
-              문의하기
-            </Link>
-          </nav>
+        {/* 네비게이션 (가운데) */}
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-16">
+          <Link
+            href="/about"
+            className="text-white font-medium hover:text-blue-300 transition-colors text-xl leading-[1.25]"
+            style={{ fontFamily: 'Gothic A1' }}
+          >
+            회사소개
+          </Link>
+          <Link
+            href="/business"
+            className="text-white font-medium hover:text-blue-300 transition-colors text-xl leading-[1.25]"
+            style={{ fontFamily: 'Gothic A1' }}
+          >
+            사업영역
+          </Link>
+          <Link
+            href="/reference"
+            className="text-white font-medium hover:text-blue-300 transition-colors text-xl leading-[1.25]"
+            style={{ fontFamily: 'Gothic A1' }}
+          >
+            레퍼런스
+          </Link>
+          <Link
+            href="/contact"
+            className="text-white font-medium hover:text-blue-300 transition-colors text-xl leading-[1.25]"
+            style={{ fontFamily: 'Gothic A1' }}
+          >
+            문의
+          </Link>
+        </nav>
 
-          {/* 모바일 메뉴 버튼 */}
-          <button className="md:hidden p-2">
-            <svg
-              className="w-6 h-6 text-gray-800"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+        {/* 메뉴 아이콘 (오른쪽) */}
+        <div className="flex-1 flex justify-end">
+          <button className="w-10 h-10">
+            <Image
+              src="/images/menu-icon.svg"
+              alt="Menu"
+              width={32}
+              height={32}
+              className="w-8 h-8"
+            />
           </button>
         </div>
       </div>
