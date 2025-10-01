@@ -178,10 +178,10 @@ export default function SocialValue() {
       {/* 인용구 텍스트 섹션 */}
       <div className="relative max-w-7xl mx-auto px-6 py-12 !mt-40">
         {/* 왼쪽 따옴표 */}
-        <div className="absolute left-[150px] top-0 text-[50px] text-black">"</div>
+        <div className="absolute left-[150px] top-0 text-[50px] text-black">&ldquo;</div>
 
         {/* 오른쪽 따옴표 */}
-        <div className="absolute right-[150px] bottom-0 text-[50px] text-black">"</div>
+        <div className="absolute right-[150px] bottom-0 text-[50px] text-black">&rdquo;</div>
 
         <div className="max-w-4xl mx-auto text-center">
           <p
