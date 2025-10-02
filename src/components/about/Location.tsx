@@ -57,29 +57,39 @@ export default function Location() {
   ];
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-12 xs:space-y-16 sm:space-y-20">
       {/* 오시는 길 타이틀 */}
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-[36px] font-bold text-black" style={{ fontFamily: 'Gothic A1' }}>
+      <div className="max-w-7xl mx-auto px-4 xs:px-6">
+        <h2
+          className="text-[24px] xs:text-[28px] sm:text-[32px] md:text-[36px] font-bold text-black"
+          style={{ fontFamily: 'Gothic A1' }}
+        >
           오시는 길
         </h2>
         {/* 구분선 */}
-        <div className="mt-6 w-full h-[1px] bg-[#2C3647]"></div>
+        <div className="mt-4 xs:mt-5 sm:mt-6 w-full h-[1px] bg-[#2C3647]"></div>
       </div>
 
-      {/* 지도 섹션 */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative w-full h-[500px] rounded-[20px] overflow-hidden">
+      {/* 지도 및 정보 섹션 */}
+      <div className="max-w-7xl mx-auto px-4 xs:px-6 flex flex-col gap-2 md:gap-0">
+        {/* 지도 섹션 */}
+        <div className="relative w-full aspect-square md:aspect-auto md:h-[450px] lg:h-[500px] rounded-[15px] xs:rounded-[20px] overflow-hidden">
           {/* 카카오맵 */}
           <KakaoMap className="w-full h-full" lat={37.6584} lng={126.832} level={3} />
 
-          {/* 하단 정보 바 */}
-          <div className="absolute bottom-0 left-0 right-0 bg-[#004AAD] py-8 px-12">
-            <div className="flex items-center justify-around">
+          {/* 하단 정보 바 - 데스크톱에서만 오버레이 */}
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-[#004AAD] py-4 xs:py-6 sm:py-8 px-4 xs:px-6 sm:px-8 md:px-12">
+            <div className="flex flex-col md:flex-row items-center justify-around gap-4 md:gap-0">
               {/* ADDRESS */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#B0C7E6] rounded-full flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <div className="flex items-center gap-2 xs:gap-3 sm:gap-4">
+                <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-[#B0C7E6] rounded-full flex items-center justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="xs:w-5 xs:h-5 sm:w-6 sm:h-6"
+                  >
                     <path
                       d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                       fill="currentColor"
@@ -87,19 +97,31 @@ export default function Location() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm" style={{ fontFamily: 'Montserrat' }}>
+                  <p
+                    className="text-white font-bold text-[10px] xs:text-xs sm:text-sm"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
                     ADDRESS
                   </p>
-                  <p className="text-white text-sm" style={{ fontFamily: 'Montserrat' }}>
+                  <p
+                    className="text-white text-[10px] xs:text-xs sm:text-sm"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
                     경기도 부천시 길주로 17, 608호
                   </p>
                 </div>
               </div>
 
               {/* TEL */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#B0C7E6] rounded-full flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <div className="flex items-center gap-2 xs:gap-3 sm:gap-4">
+                <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-[#B0C7E6] rounded-full flex items-center justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="xs:w-5 xs:h-5 sm:w-6 sm:h-6"
+                  >
                     <path
                       d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
                       fill="currentColor"
@@ -107,19 +129,31 @@ export default function Location() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm" style={{ fontFamily: 'Montserrat' }}>
+                  <p
+                    className="text-white font-bold text-[10px] xs:text-xs sm:text-sm"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
                     TEL
                   </p>
-                  <p className="text-white text-sm" style={{ fontFamily: 'Montserrat' }}>
+                  <p
+                    className="text-white text-[10px] xs:text-xs sm:text-sm"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
                     010-1111-1111
                   </p>
                 </div>
               </div>
 
               {/* EMAIL */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#B0C7E6] rounded-full flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <div className="flex items-center gap-2 xs:gap-3 sm:gap-4">
+                <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-[#B0C7E6] rounded-full flex items-center justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="xs:w-5 xs:h-5 sm:w-6 sm:h-6"
+                  >
                     <path
                       d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
                       fill="currentColor"
@@ -127,10 +161,119 @@ export default function Location() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm" style={{ fontFamily: 'Montserrat' }}>
+                  <p
+                    className="text-white font-bold text-[10px] xs:text-xs sm:text-sm"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
                     EMAIL
                   </p>
-                  <p className="text-white text-sm" style={{ fontFamily: 'Montserrat' }}>
+                  <p
+                    className="text-white text-[10px] xs:text-xs sm:text-sm"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
+                    111@hani.co.kr
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 모바일/태블릿용 분리된 정보 바 */}
+        <div className="md:hidden">
+          <div className="bg-[#004AAD] rounded-[15px] xs:rounded-[20px] py-4 xs:py-6 px-4 xs:px-6">
+            <div className="flex flex-col gap-4 xs:gap-6">
+              {/* ADDRESS */}
+              <div className="flex items-center gap-2 xs:gap-3">
+                <div className="w-8 h-8 xs:w-10 xs:h-10 bg-[#B0C7E6] rounded-full flex items-center justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="xs:w-5 xs:h-5"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    className="text-white font-bold text-[10px] xs:text-xs"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
+                    ADDRESS
+                  </p>
+                  <p
+                    className="text-white text-[10px] xs:text-xs"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
+                    경기도 부천시 길주로 17, 608호
+                  </p>
+                </div>
+              </div>
+
+              {/* TEL */}
+              <div className="flex items-center gap-2 xs:gap-3">
+                <div className="w-8 h-8 xs:w-10 xs:h-10 bg-[#B0C7E6] rounded-full flex items-center justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="xs:w-5 xs:h-5"
+                  >
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    className="text-white font-bold text-[10px] xs:text-xs"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
+                    TEL
+                  </p>
+                  <p
+                    className="text-white text-[10px] xs:text-xs"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
+                    010-1111-1111
+                  </p>
+                </div>
+              </div>
+
+              {/* EMAIL */}
+              <div className="flex items-center gap-2 xs:gap-3">
+                <div className="w-8 h-8 xs:w-10 xs:h-10 bg-[#B0C7E6] rounded-full flex items-center justify-center">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="xs:w-5 xs:h-5"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    className="text-white font-bold text-[10px] xs:text-xs"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
+                    EMAIL
+                  </p>
+                  <p
+                    className="text-white text-[10px] xs:text-xs"
+                    style={{ fontFamily: 'Montserrat' }}
+                  >
                     111@hani.co.kr
                   </p>
                 </div>
@@ -141,30 +284,33 @@ export default function Location() {
       </div>
 
       {/* 교통안내 섹션 */}
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-[36px] font-bold text-black" style={{ fontFamily: 'Gothic A1' }}>
+      <div className="max-w-7xl mx-auto px-4 xs:px-6">
+        <h2
+          className="text-[24px] xs:text-[28px] sm:text-[32px] md:text-[36px] font-bold text-black"
+          style={{ fontFamily: 'Gothic A1' }}
+        >
           교통안내
         </h2>
         {/* 구분선 */}
-        <div className="mt-6 w-full h-[1px] bg-[#2C3647]"></div>
+        <div className="mt-4 xs:mt-5 sm:mt-6 w-full h-[1px] bg-[#2C3647]"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xs:gap-6 mt-8 xs:mt-10 sm:mt-12">
           {transportInfo.map((item, index) => (
             <div
               key={index}
-              className="bg-[#E6EDF7] rounded-[20px] p-8 flex flex-col items-center justify-center gap-6 min-h-[200px]"
+              className="bg-[#E6EDF7] rounded-[15px] xs:rounded-[20px] p-4 xs:p-6 sm:p-8 flex flex-col items-center justify-center gap-4 xs:gap-6 min-h-[180px] xs:min-h-[200px]"
             >
-              <div className="text-black">{item.icon}</div>
+              <div className="text-black scale-75 xs:scale-90 sm:scale-100">{item.icon}</div>
               <div className="text-center">
                 <p
-                  className="text-[18px] font-medium text-black leading-[1.4]"
+                  className="text-[14px] xs:text-[16px] sm:text-[18px] font-medium text-black leading-[1.4]"
                   style={{ fontFamily: 'Gothic A1' }}
                 >
                   {item.title}
                 </p>
                 {item.subtitle && (
                   <p
-                    className="text-[18px] font-normal text-black leading-[1.4]"
+                    className="text-[14px] xs:text-[16px] sm:text-[18px] font-normal text-black leading-[1.4]"
                     style={{ fontFamily: 'Gothic A1' }}
                   >
                     {item.subtitle}
@@ -177,7 +323,7 @@ export default function Location() {
       </div>
 
       {/* 푸터와의 간격 */}
-      <div className="h-20"></div>
+      <div className="h-12 xs:h-16 sm:h-20"></div>
     </div>
   );
 }
