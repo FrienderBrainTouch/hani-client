@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#001A3D] text-white py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-0">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-6 sm:gap-8 lg:gap-0">
           {/* 왼쪽 정보 영역 */}
           <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
             {/* 주소 */}
@@ -85,24 +85,24 @@ export default function Footer() {
           </div>
 
           {/* 오른쪽 HANI 텍스트와 링크 */}
-          <div className="flex flex-col items-center lg:items-end gap-3 sm:gap-4">
+          <div className="flex flex-col items-start lg:items-end gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             <div
-              className="text-white text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[100px] leading-[1.03] font-normal"
+              className="text-white text-[28px] xs:text-[32px] sm:text-[36px] md:text-[42px] lg:text-[60px] xl:text-[80px] leading-[1.03] font-normal"
               style={{ fontFamily: 'GangwonEduPower' }}
             >
               H A N I
             </div>
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-8">
               <Link
                 href="/privacy"
-                className="text-white hover:text-blue-300 transition-colors text-sm sm:text-base md:text-lg font-bold"
+                className="text-white hover:text-blue-300 transition-colors text-[11px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-bold"
                 style={{ fontFamily: 'Montserrat' }}
               >
                 개인정보처리방침
               </Link>
               <Link
                 href="/email-policy"
-                className="text-white hover:text-blue-300 transition-colors text-sm sm:text-base md:text-lg font-bold"
+                className="text-white hover:text-blue-300 transition-colors text-[11px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-bold"
                 style={{ fontFamily: 'Montserrat' }}
               >
                 이메일무단수집거부
