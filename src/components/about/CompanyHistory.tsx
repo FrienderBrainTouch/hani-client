@@ -72,13 +72,13 @@ export default function CompanyHistory() {
   }, [certificates.length]);
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-12 xs:space-y-16 sm:space-y-20">
       {/* 연혁 메인 섹션 */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-10">
+      <div className="max-w-7xl mx-auto px-4 xs:px-6">
+        <div className="flex flex-col lg:flex-row gap-6 xs:gap-8 sm:gap-10">
           {/* 왼쪽: 이미지와 텍스트 */}
-          <div className="lg:w-[450px] flex flex-col gap-8">
-            <div className="relative w-full h-[400px] rounded-[30px] overflow-hidden">
+          <div className="lg:w-[450px] flex flex-col gap-6 xs:gap-8">
+            <div className="relative w-full h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] rounded-[20px] xs:rounded-[25px] md:rounded-[30px] overflow-hidden">
               <Image
                 src="/images/about/history-main.png"
                 alt="History"
@@ -87,7 +87,7 @@ export default function CompanyHistory() {
               />
             </div>
             <p
-              className="text-[24px] font-medium text-black leading-[1.4]"
+              className="text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-medium text-black leading-[1.4]"
               style={{ fontFamily: 'Gothic A1' }}
             >
               하니는 데이터와 AI를 기반으로
@@ -98,14 +98,14 @@ export default function CompanyHistory() {
 
           {/* 오른쪽: 타임라인 (스크롤 영역) */}
           <div className="flex-1">
-            <div className="h-[650px] overflow-y-auto pr-4 custom-scrollbar">
-              <div className="space-y-12">
+            <div className="h-[400px] xs:h-[500px] sm:h-[600px] md:h-[650px] overflow-y-auto pr-2 xs:pr-4 custom-scrollbar">
+              <div className="space-y-8 xs:space-y-10 sm:space-y-12">
                 {historyData.map((item, index) => (
-                  <div key={index} className="flex gap-8">
+                  <div key={index} className="flex gap-4 xs:gap-6 sm:gap-8">
                     {/* 년도 */}
-                    <div className="flex-shrink-0 w-[100px]">
+                    <div className="flex-shrink-0 w-[60px] xs:w-[80px] sm:w-[100px]">
                       <h3
-                        className="text-[48px] font-bold text-black"
+                        className="text-[24px] xs:text-[32px] sm:text-[40px] md:text-[48px] font-bold text-black"
                         style={{ fontFamily: 'Montserrat' }}
                       >
                         {item.year}
@@ -113,13 +113,15 @@ export default function CompanyHistory() {
                     </div>
 
                     {/* 내용 */}
-                    <div className="flex-1 pt-3">
-                      <ul className="space-y-3">
+                    <div className="flex-1 pt-2 xs:pt-3">
+                      <ul className="space-y-2 xs:space-y-3">
                         {item.items.map((content, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <span className="text-[#004AAD] mt-2 flex-shrink-0">−</span>
+                          <li key={idx} className="flex items-start gap-2 xs:gap-3">
+                            <span className="text-[#004AAD] mt-1 xs:mt-2 flex-shrink-0 text-[12px] xs:text-[14px] sm:text-[16px]">
+                              −
+                            </span>
                             <span
-                              className="text-[18px] font-normal text-black leading-[1.5]"
+                              className="text-[12px] xs:text-[14px] sm:text-[16px] md:text-[18px] font-normal text-black leading-[1.5]"
                               style={{ fontFamily: 'Gothic A1' }}
                             >
                               {content}
@@ -137,10 +139,10 @@ export default function CompanyHistory() {
       </div>
 
       {/* 인증 및 수상 섹션 */}
-      <div className="bg-[#F7FAFD] py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-[#F7FAFD] py-12 xs:py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 xs:px-6">
           <h2
-            className="text-[36px] font-bold text-black mb-12"
+            className="text-[24px] xs:text-[28px] sm:text-[32px] md:text-[36px] font-bold text-black mb-8 xs:mb-10 sm:mb-12"
             style={{ fontFamily: 'Gothic A1' }}
           >
             인증 및 수상
@@ -153,14 +155,23 @@ export default function CompanyHistory() {
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {certificates.map((cert, index) => (
-                <div key={index} className="min-w-full flex justify-center items-center gap-8">
-                  {/* 현재 슬라이드에 4개 이미지 표시 */}
+                <div
+                  key={index}
+                  className="min-w-full flex justify-center items-center gap-4 xs:gap-6 sm:gap-8"
+                >
+                  {/* 모바일: 1개, 태블릿: 2개, 데스크톱: 4개 이미지 표시 */}
                   {[0, 1, 2, 3].map((offset) => {
                     const imgIndex = (index + offset) % certificates.length;
                     return (
                       <div
                         key={offset}
-                        className="relative w-[280px] h-[380px] rounded-lg overflow-hidden shadow-lg"
+                        className={`relative w-[180px] xs:w-[220px] sm:w-[250px] md:w-[280px] h-[240px] xs:h-[300px] sm:h-[340px] md:h-[380px] rounded-lg overflow-hidden shadow-lg ${
+                          offset === 0
+                            ? 'block' // 모바일: 첫 번째만 표시
+                            : offset <= 1
+                            ? 'hidden md:block lg:hidden' // 태블릿(768px): 첫 번째, 두 번째 표시
+                            : 'hidden xl:block' // 데스크톱(1024px+): 모든 이미지 표시
+                        }`}
                       >
                         <Image
                           src={certificates[imgIndex]}
@@ -177,12 +188,12 @@ export default function CompanyHistory() {
           </div>
 
           {/* 인디케이터 */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-1 xs:gap-2 mt-6 xs:mt-8">
             {certificates.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'w-8 bg-[#004AAD]' : 'w-2 bg-gray-300'
+                className={`h-1 xs:h-2 rounded-full transition-all ${
+                  currentSlide === index ? 'w-6 xs:w-8 bg-[#004AAD]' : 'w-1 xs:w-2 bg-gray-300'
                 }`}
               />
             ))}
