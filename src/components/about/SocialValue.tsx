@@ -95,7 +95,7 @@ export default function SocialValue() {
       </div>
 
       {/* 노트북/데스크톱: 기존 3개 원형 버블 디자인 */}
-      <div className="hidden lg:block relative h-[300px] flex items-center justify-center">
+      <div className="hidden lg:flex relative h-[300px] items-center justify-center">
         <div className="relative w-[900px] h-[300px] mx-auto">
           {/* 첫 번째 원 - 왼쪽 (위쪽 border: 진한 파란색, 아래쪽 border: 연한 파란색) */}
           <div className="absolute left-0 top-0 w-[300px] h-[300px] flex items-center justify-center">
