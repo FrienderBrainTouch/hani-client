@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MobileNav from './MobileNav';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +87,10 @@ export default function Header() {
 
         {/* 메뉴 아이콘 (오른쪽) */}
         <div className="flex-1 flex justify-end">
-          <button className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10">
+          <button
+            onClick={() => setIsMobileNavOpen(true)}
+            className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:hidden"
+          >
             <Image
               src="/images/common/menu-icon.svg"
               alt="Menu"
@@ -96,6 +101,9 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      {/* 모바일 네비게이션 */}
+      <MobileNav isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />
     </header>
   );
 }
