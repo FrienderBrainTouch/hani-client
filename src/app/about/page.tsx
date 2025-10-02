@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import { Tabs } from '@/components/common';
-import { CompanyOverview, CompanyHistory, SocialValue } from '@/components/about';
+import { CompanyOverview, CompanyHistory, SocialValue, Location } from '@/components/about';
 import { useTabState } from '@/hooks';
 
 function AboutContent() {
@@ -58,22 +58,7 @@ function AboutContent() {
         {activeTab === 'overview' && <CompanyOverview />}
         {activeTab === 'history' && <CompanyHistory />}
         {activeTab === 'vision' && <SocialValue />}
-        {activeTab === 'location' && (
-          <div>
-            <h2
-              className="text-[32px] font-bold text-black mb-6"
-              style={{ fontFamily: 'Gothic A1' }}
-            >
-              오시는 길
-            </h2>
-            <p
-              className="text-[18px] text-gray-700 leading-relaxed"
-              style={{ fontFamily: 'Gothic A1' }}
-            >
-              여기에 오시는 길 컴포넌트를 렌더링합니다.
-            </p>
-          </div>
-        )}
+        {activeTab === 'location' && <Location />}
       </div>
     </div>
   );
