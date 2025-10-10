@@ -1,111 +1,71 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense } from 'react';
+import { Tabs } from '@/components/common';
+import { DataVoucher, RND, WebAppDev } from '@/components/business';
+import { useTabState } from '@/hooks';
 
-export default function BusinessPage() {
-  const [activeTab, setActiveTab] = useState('ai');
+function BusinessContent() {
+  const [activeTab, setActiveTab] = useTabState('data');
 
   const tabs = [
-    { id: 'ai', label: 'AI 연구개발' },
-    { id: 'vr', label: 'VR 콘텐츠' },
-    { id: 'web', label: '웹/앱 개발' },
-    { id: 'consulting', label: '컨설팅' },
+    { id: 'data', label: '데이터 바우처' },
+    { id: 'rnd', label: 'R&D' },
+    { id: 'webapp', label: '웹·앱 구축' },
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* 페이지 타이틀 */}
-        <h1 className="text-[48px] font-bold text-black mb-12" style={{ fontFamily: 'Gothic A1' }}>
-          사업영역
-        </h1>
+    <div className="min-h-screen bg-white">
+      {/* 배너 섹션 */}
+      <section
+        id="page-banner"
+        className="h-[500px] xs:h-[600px] sm:h-[700px] md:h-[800px] pt-16 xs:pt-18 sm:pt-20"
+        style={{
+          backgroundImage: 'url(/images/business/hero-banner.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="h-full flex flex-col justify-between pb-8 xs:pb-10 sm:pb-12">
+          <div className="flex-1 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-3 xs:gap-4 sm:gap-5 px-4 xs:px-6">
+              <h1
+                className="text-[32px] xs:text-[40px] sm:text-[48px] md:text-[60px] font-bold text-white text-center"
+                style={{ fontFamily: 'Montserrat' }}
+              >
+                BUSINESS
+              </h1>
+              <p
+                className="text-[18px] xs:text-[22px] sm:text-[28px] md:text-[36px] font-medium text-white text-center leading-[1.25]"
+                style={{ fontFamily: 'Gothic A1' }}
+              >
+                데이터와 AI로 세상에 가치를 더하는 혁신 기업
+              </p>
+            </div>
+          </div>
 
-        {/* 탭 네비게이션 */}
-        <div className="flex gap-4 mb-12 border-b border-gray-200">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 text-[20px] font-medium transition-colors ${
-                activeTab === tab.id
-                  ? 'text-[#004AAD] border-b-2 border-[#004AAD]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-              style={{ fontFamily: 'Gothic A1' }}
-            >
-              {tab.label}
-            </button>
-          ))}
+          {/* 탭 네비게이션 */}
+          <div className="mx-auto px-4 xs:px-6 w-full">
+            <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+          </div>
         </div>
+      </section>
 
+      {/* 콘텐츠 영역 */}
+      <div className="pt-8 xs:pt-10 sm:pt-12 pb-0">
         {/* 탭 콘텐츠 */}
-        <div className="py-8">
-          {activeTab === 'ai' && (
-            <div>
-              <h2
-                className="text-[32px] font-bold text-black mb-6"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                AI 연구개발
-              </h2>
-              <p
-                className="text-[18px] text-gray-700 leading-relaxed"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                여기에 AI 연구개발 컴포넌트를 렌더링합니다.
-              </p>
-            </div>
-          )}
-          {activeTab === 'vr' && (
-            <div>
-              <h2
-                className="text-[32px] font-bold text-black mb-6"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                VR 콘텐츠
-              </h2>
-              <p
-                className="text-[18px] text-gray-700 leading-relaxed"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                여기에 VR 콘텐츠 컴포넌트를 렌더링합니다.
-              </p>
-            </div>
-          )}
-          {activeTab === 'web' && (
-            <div>
-              <h2
-                className="text-[32px] font-bold text-black mb-6"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                웹/앱 개발
-              </h2>
-              <p
-                className="text-[18px] text-gray-700 leading-relaxed"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                여기에 웹/앱 개발 컴포넌트를 렌더링합니다.
-              </p>
-            </div>
-          )}
-          {activeTab === 'consulting' && (
-            <div>
-              <h2
-                className="text-[32px] font-bold text-black mb-6"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                컨설팅
-              </h2>
-              <p
-                className="text-[18px] text-gray-700 leading-relaxed"
-                style={{ fontFamily: 'Gothic A1' }}
-              >
-                여기에 컨설팅 컴포넌트를 렌더링합니다.
-              </p>
-            </div>
-          )}
-        </div>
+        {activeTab === 'data' && <DataVoucher />}
+        {activeTab === 'rnd' && <RND />}
+        {activeTab === 'webapp' && <WebAppDev />}
       </div>
     </div>
+  );
+}
+
+export default function BusinessPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BusinessContent />
+    </Suspense>
   );
 }
