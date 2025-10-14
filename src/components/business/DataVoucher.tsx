@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function DataVoucher() {
   const serviceFlow = [
@@ -321,12 +322,13 @@ export default function DataVoucher() {
               하니는 고품질 데이터 가공을 통해 기관과 기업의 디지털 전환을 지원합니다.
             </p>
           </div>
-          <button
-            className="bg-[#00214E] hover:bg-[#002C68] text-[#E6EDF7] px-8 xs:px-10 sm:px-12 md:px-16 lg:px-[100px] py-4 xs:py-5 sm:py-6 md:py-[25px] lg:py-[30px] rounded-[25px] xs:rounded-[30px] md:rounded-[50px] lg:rounded-[60px] text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold transition-colors"
+          <Link
+            href="/contact"
+            className="bg-[#00214E] hover:bg-[#002C68] text-[#E6EDF7] px-8 xs:px-10 sm:px-12 md:px-16 lg:px-[100px] py-4 xs:py-5 sm:py-6 md:py-[25px] lg:py-[30px] rounded-[25px] xs:rounded-[30px] md:rounded-[50px] lg:rounded-[60px] text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'Gothic A1' }}
           >
             문의하기
-          </button>
+          </Link>
         </div>
       </div>
     </div>
