@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function RND() {
   const researchAreas = [
     {
@@ -237,12 +239,13 @@ export default function RND() {
           >
             연구개발로 검증된 기술을 실제 현장에 적용하여 새로운 가치를 창출합니다
           </p>
-          <button
-            className="bg-[#004AAD] hover:bg-[#003B8A] text-white px-8 xs:px-10 sm:px-12 py-3 xs:py-4 sm:py-5 rounded-[25px] xs:rounded-[30px] text-[16px] xs:text-[18px] sm:text-[20px] font-semibold transition-colors"
+          <Link
+            href="/contact"
+            className="bg-[#004AAD] hover:bg-[#003B8A] text-white px-8 xs:px-10 sm:px-12 py-3 xs:py-4 sm:py-5 rounded-[25px] xs:rounded-[30px] text-[16px] xs:text-[18px] sm:text-[20px] font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'Gothic A1' }}
           >
             R&D 협력 문의
-          </button>
+          </Link>
         </div>
       </div>
     </div>
