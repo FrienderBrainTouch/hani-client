@@ -2,11 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# Next.js 플러그인 비활성화 (Vite로 마이그레이션됨)
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  enabled = false
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
