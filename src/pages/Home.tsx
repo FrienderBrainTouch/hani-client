@@ -6,7 +6,7 @@ import {
   CTASection,
 } from '@/components/main';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <MainBannerSection />
@@ -19,3 +19,4 @@ export default function Home() {
     </>
   );
 }
+

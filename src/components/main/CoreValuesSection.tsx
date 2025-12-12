@@ -1,6 +1,6 @@
-'use client';
 
-import Image from 'next/image';
+
+
 
 export default function CoreValuesSection() {
   const cards = [
@@ -61,7 +61,7 @@ export default function CoreValuesSection() {
               className="relative h-[200px] bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden"
             >
               {/* 배경 이미지 */}
-              <Image src={card.image} alt={card.title} fill className="object-cover" />
+              <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover" />
 
               {/* 오버레이 및 콘텐츠 */}
               <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-3">
@@ -90,7 +90,7 @@ export default function CoreValuesSection() {
               className={`relative h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden ${card.borderRadius} ${card.marginTop}`}
             >
               {/* 배경 이미지 */}
-              <Image src={card.image} alt={card.title} fill className="object-cover" />
+              <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover" />
 
               {/* 오버레이 및 콘텐츠 */}
               <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 sm:p-8">

@@ -1,18 +1,14 @@
-'use client';
-
-import { Suspense } from 'react';
 import { Tabs } from '@/components/common';
-import { CompanyOverview, CompanyHistory, SocialValue, Location } from '@/components/about';
+import { DataVoucher, RND, WebAppDev } from '@/components/business';
 import { useTabState } from '@/hooks';
 
-function AboutContent() {
-  const [activeTab, setActiveTab] = useTabState('overview');
+export default function BusinessPage() {
+  const [activeTab, setActiveTab] = useTabState('data');
 
   const tabs = [
-    { id: 'overview', label: '기업 개요' },
-    { id: 'history', label: '연혁' },
-    { id: 'vision', label: '사회적 가치' },
-    { id: 'location', label: '오시는 길' },
+    { id: 'data', label: '데이터 바우처' },
+    { id: 'rnd', label: 'R&D' },
+    { id: 'webapp', label: '웹·앱 구축' },
   ];
 
   return (
@@ -22,7 +18,7 @@ function AboutContent() {
         id="page-banner"
         className="h-[500px] xs:h-[600px] sm:h-[700px] md:h-[800px] pt-16 xs:pt-18 sm:pt-20"
         style={{
-          backgroundImage: 'url(/images/about/about-bg.svg)',
+          backgroundImage: 'url(/images/business/hero-banner.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -34,7 +30,7 @@ function AboutContent() {
                 className="text-[32px] xs:text-[40px] sm:text-[48px] md:text-[60px] font-bold text-white text-center"
                 style={{ fontFamily: 'Montserrat' }}
               >
-                COMPANY
+                BUSINESS
               </h1>
               <p
                 className="text-[18px] xs:text-[22px] sm:text-[28px] md:text-[36px] font-medium text-white text-center leading-[1.25]"
@@ -55,19 +51,10 @@ function AboutContent() {
       {/* 콘텐츠 영역 */}
       <div className="pt-8 xs:pt-10 sm:pt-12 pb-0">
         {/* 탭 콘텐츠 */}
-        {activeTab === 'overview' && <CompanyOverview />}
-        {activeTab === 'history' && <CompanyHistory />}
-        {activeTab === 'vision' && <SocialValue />}
-        {activeTab === 'location' && <Location />}
+        {activeTab === 'data' && <DataVoucher />}
+        {activeTab === 'rnd' && <RND />}
+        {activeTab === 'webapp' && <WebAppDev />}
       </div>
     </div>
-  );
-}
-
-export default function AboutPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <AboutContent />
-    </Suspense>
   );
 }

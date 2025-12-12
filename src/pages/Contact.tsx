@@ -1,5 +1,3 @@
-'use client';
-
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -233,3 +231,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

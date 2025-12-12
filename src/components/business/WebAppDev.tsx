@@ -1,6 +1,4 @@
-'use client';
-
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export default function WebAppDev() {
   const developmentStages = [
@@ -225,7 +223,7 @@ export default function WebAppDev() {
             데이터와 AI 기반의 웹·앱 서비스를 지금 시작해보세요
           </p>
           <Link
-            href="/contact"
+            to="/contact"
             className="bg-[#004AAD] hover:bg-[#003B8A] text-white px-8 xs:px-10 sm:px-12 py-3 xs:py-4 sm:py-5 rounded-[25px] xs:rounded-[30px] text-[16px] xs:text-[18px] sm:text-[20px] font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'Gothic A1' }}
           >

@@ -1,6 +1,6 @@
-'use client';
 
-import Image from 'next/image';
+
+
 
 export default function StrengthsSection() {
   const strengths = [
@@ -28,11 +28,10 @@ export default function StrengthsSection() {
     <section className="relative py-12 xs:py-16 sm:py-20">
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src="/images/main/main-bg-03.svg"
           alt="Strengths background"
-          fill
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
@@ -64,7 +63,7 @@ export default function StrengthsSection() {
             >
               {/* 배경 이미지 */}
               <div className="absolute inset-0">
-                <Image src={strength.image} alt={strength.title} fill className="object-cover" />
+                <img src={strength.image} alt={strength.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/40" />
               </div>
 
@@ -98,7 +97,7 @@ export default function StrengthsSection() {
             >
               {/* 배경 이미지 */}
               <div className="absolute inset-0">
-                <Image src={strength.image} alt={strength.title} fill className="object-cover" />
+                <img src={strength.image} alt={strength.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/50" />
               </div>
 

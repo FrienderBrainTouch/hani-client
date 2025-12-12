@@ -1,8 +1,5 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { Link } from 'react-router-dom';
 import MobileNav from './MobileNav';
 
 export default function Header() {
@@ -42,13 +39,11 @@ export default function Header() {
       <div className="flex items-center h-full px-4 sm:px-6 md:px-8 lg:px-10">
         {/* 로고 (왼쪽) */}
         <div className="flex-1 flex justify-start">
-          <Link href="/">
-            <Image
+          <Link to="/">
+            <img
               src="/images/common/hani-logo.svg"
               alt="HANI Logo"
-              width={80}
-              height={40}
-              className="sm:w-[90px] sm:h-[45px] md:w-[100px] md:h-[50px] lg:w-[112px] lg:h-[56px]"
+              className="w-[80px] h-[40px] sm:w-[90px] sm:h-[45px] md:w-[100px] md:h-[50px] lg:w-[112px] lg:h-[56px]"
             />
           </Link>
         </div>
@@ -56,28 +51,28 @@ export default function Header() {
         {/* 네비게이션 (가운데) - 데스크톱에서만 표시 */}
         <nav className="hidden lg:flex flex-1 justify-center items-center gap-8 xl:gap-12 2xl:gap-16">
           <Link
-            href="/about"
+            to="/about"
             className="text-white font-medium hover:text-blue-300 transition-colors text-base xl:text-lg 2xl:text-xl leading-[1.25]"
             style={{ fontFamily: 'Gothic A1' }}
           >
             회사소개
           </Link>
           <Link
-            href="/business"
+            to="/business"
             className="text-white font-medium hover:text-blue-300 transition-colors text-base xl:text-lg 2xl:text-xl leading-[1.25]"
             style={{ fontFamily: 'Gothic A1' }}
           >
             사업영역
           </Link>
           <Link
-            href="/reference"
+            to="/reference"
             className="text-white font-medium hover:text-blue-300 transition-colors text-base xl:text-lg 2xl:text-xl leading-[1.25]"
             style={{ fontFamily: 'Gothic A1' }}
           >
             레퍼런스
           </Link>
           <Link
-            href="/contact"
+            to="/contact"
             className="text-white font-medium hover:text-blue-300 transition-colors text-base xl:text-lg 2xl:text-xl leading-[1.25]"
             style={{ fontFamily: 'Gothic A1' }}
           >
@@ -91,11 +86,9 @@ export default function Header() {
             onClick={() => setIsMobileNavOpen(true)}
             className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:hidden"
           >
-            <Image
+            <img
               src="/images/common/menu-icon.svg"
               alt="Menu"
-              width={24}
-              height={24}
               className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
             />
           </button>

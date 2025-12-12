@@ -1,7 +1,7 @@
-'use client';
+
 
 import { useState } from 'react';
-import Image from 'next/image';
+
 
 export default function CompanyOverview() {
   const [hoveredCard, setHoveredCard] = useState(0); // 기본: 첫 번째 카드
@@ -201,11 +201,11 @@ export default function CompanyOverview() {
                 {value.title}
               </h3>
               <div className="flex justify-center mt-2 xs:mt-3 sm:mt-4">
-                <Image
+                <img
                   src={value.image}
                   alt={value.title}
-                  width={100}
-                  height={100}
+                 
+                 
                   className="w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] sm:w-[120px] sm:h-[120px] md:w-[150px] md:h-[150px]"
                 />
               </div>

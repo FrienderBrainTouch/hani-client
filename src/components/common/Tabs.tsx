@@ -1,4 +1,4 @@
-'use client';
+
 
 interface Tab {
   id: string;

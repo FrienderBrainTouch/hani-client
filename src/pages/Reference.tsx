@@ -1,7 +1,3 @@
-'use client';
-
-import Image from 'next/image';
-
 export default function ReferencePage() {
   const references = [
     {
@@ -94,11 +90,10 @@ export default function ReferencePage() {
               >
                 {/* 배경 이미지 */}
                 <div className="absolute inset-0">
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
 
@@ -122,3 +117,4 @@ export default function ReferencePage() {
     </div>
   );
 }
+
