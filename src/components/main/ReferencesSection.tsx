@@ -1,10 +1,10 @@
-'use client';
+
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export default function ReferencesSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [_currentSlide, setCurrentSlide] = useState(0);
 
   const references = [
     {
@@ -101,7 +101,7 @@ export default function ReferencesSection() {
                   </p>
                 </div>
                 <Link
-                  href={ref.link}
+                  to={ref.link}
                   className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-md text-[#001A3D] font-medium text-[14px] hover:bg-gray-100 transition-colors w-fit"
                   style={{ fontFamily: 'Gothic A1' }}
                 >
@@ -155,7 +155,7 @@ export default function ReferencesSection() {
                   </p>
                 </div>
                 <Link
-                  href={ref.link}
+                  to={ref.link}
                   className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-md text-[#001A3D] font-medium text-[16px] md:text-[18px] hover:bg-gray-100 transition-colors w-fit"
                   style={{ fontFamily: 'Gothic A1' }}
                 >

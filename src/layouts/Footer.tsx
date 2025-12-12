@@ -1,6 +1,4 @@
-'use client';
-
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -83,14 +81,14 @@ export default function Footer() {
             </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 xs:gap-3 sm:gap-4 md:gap-5 lg:gap-8">
               <Link
-                href="/privacy"
+                to="/privacy"
                 className="text-white hover:text-blue-300 transition-colors text-[11px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-bold"
                 style={{ fontFamily: 'Montserrat' }}
               >
                 개인정보처리방침
               </Link>
               <Link
-                href="/email-policy"
+                to="/email-policy"
                 className="text-white hover:text-blue-300 transition-colors text-[11px] xs:text-xs sm:text-sm md:text-base lg:text-lg font-bold"
                 style={{ fontFamily: 'Montserrat' }}
               >

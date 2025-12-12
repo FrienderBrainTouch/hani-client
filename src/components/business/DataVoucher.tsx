@@ -1,7 +1,4 @@
-'use client';
-
-import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export default function DataVoucher() {
   const serviceFlow = [
@@ -194,7 +191,13 @@ export default function DataVoucher() {
               </div>
               {index < processSteps.length - 1 && (
                 <div className="w-[12px] xs:w-[14px] sm:w-[16px] h-[12px] xs:h-[14px] sm:h-[16px] mx-2 mt-2">
-                  <svg width="100%" height="100%" viewBox="0 0 18 18" fill="none">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M9 1L17 9L9 17L8 16L14 10H1V8H14L8 2L9 1Z"
                       fill="#D9D9D9"
@@ -323,7 +326,7 @@ export default function DataVoucher() {
             </p>
           </div>
           <Link
-            href="/contact"
+            to="/contact"
             className="bg-[#00214E] hover:bg-[#002C68] text-[#E6EDF7] px-8 xs:px-10 sm:px-12 md:px-16 lg:px-[100px] py-4 xs:py-5 sm:py-6 md:py-[25px] lg:py-[30px] rounded-[25px] xs:rounded-[30px] md:rounded-[50px] lg:rounded-[60px] text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-semibold transition-colors inline-block text-center"
             style={{ fontFamily: 'Gothic A1' }}
           >

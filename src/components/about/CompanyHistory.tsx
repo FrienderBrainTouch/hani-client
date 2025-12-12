@@ -1,7 +1,4 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function CompanyHistory() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,12 +76,7 @@ export default function CompanyHistory() {
           {/* 왼쪽: 이미지와 텍스트 */}
           <div className="lg:w-[450px] flex flex-col gap-6 xs:gap-8">
             <div className="relative w-full h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] rounded-[20px] xs:rounded-[25px] md:rounded-[30px] overflow-hidden">
-              <Image
-                src="/images/about/history-main.png"
-                alt="History"
-                fill
-                className="object-cover"
-              />
+              <img src="/images/about/history-main.png" alt="History" className="object-cover" />
             </div>
             <p
               className="text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-medium text-black leading-[1.4]"
@@ -154,7 +146,7 @@ export default function CompanyHistory() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {certificates.map((cert, index) => (
+              {certificates.map((_cert, index) => (
                 <div
                   key={index}
                   className="min-w-full flex justify-center items-center gap-4 xs:gap-6 sm:gap-8"
@@ -173,10 +165,9 @@ export default function CompanyHistory() {
                             : 'hidden xl:block' // 데스크톱(1024px+): 모든 이미지 표시
                         }`}
                       >
-                        <Image
+                        <img
                           src={certificates[imgIndex]}
                           alt={`Certificate ${imgIndex + 1}`}
-                          fill
                           className="object-cover"
                         />
                       </div>
@@ -201,7 +192,7 @@ export default function CompanyHistory() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;
         }

@@ -1,4 +1,4 @@
-'use client';
+/// <reference types="vite/client" />
 
 import { useEffect, useRef } from 'react';
 
@@ -27,12 +27,21 @@ export default function KakaoMap({
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // script 태그 로드
-    const script = document.createElement('script');
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`;
-    script.async = true;
+    const apiKey = import.meta.env.VITE_KAKAO_API_KEY;
+    if (!apiKey) {
+      console.error('VITE_KAKAO_API_KEY가 설정되지 않았습니다.');
+      return;
+    }
 
-    script.onload = () => {
+    // 이미 스크립트가 로드되어 있는지 확인
+    const existingScript = document.querySelector('script[src*="dapi.kakao.com/v2/maps/sdk.js"]');
+
+    const initMap = () => {
+      if (!window.kakao || !window.kakao.maps) {
+        console.error('카카오맵 SDK가 로드되지 않았습니다.');
+        return;
+      }
+
       window.kakao.maps.load(() => {
         const container = mapRef.current;
         if (!container) return;
@@ -55,14 +64,28 @@ export default function KakaoMap({
       });
     };
 
-    document.head.appendChild(script);
+    if (existingScript && window.kakao) {
+      // 이미 로드되어 있으면 바로 초기화
+      initMap();
+    } else if (!existingScript) {
+      // 스크립트가 없으면 새로 로드
+      const script = document.createElement('script');
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&autoload=false`;
+      script.async = true;
 
-    // cleanup
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
+      script.onload = () => {
+        initMap();
+      };
+
+      script.onerror = () => {
+        console.error('카카오맵 SDK 로드에 실패했습니다.');
+      };
+
+      document.head.appendChild(script);
+    } else {
+      // 스크립트는 있지만 아직 로드 중이면 이벤트 리스너 추가
+      existingScript.addEventListener('load', initMap);
+    }
   }, [lat, lng, level]);
 
   return (

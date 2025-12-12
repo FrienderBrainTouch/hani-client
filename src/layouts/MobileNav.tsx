@@ -1,7 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -60,7 +57,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
-                  href={item.href}
+                  to={item.href}
                   onClick={onClose}
                   className="block py-4 px-4 text-white text-lg font-medium hover:bg-white/10 rounded-lg transition-colors"
                   style={{ fontFamily: 'Gothic A1' }}

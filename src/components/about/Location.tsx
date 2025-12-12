@@ -1,5 +1,3 @@
-'use client';
-
 import { KakaoMap } from '@/components/common';
 
 export default function Location() {
@@ -107,7 +105,7 @@ export default function Location() {
                     className="text-white text-[10px] xs:text-xs sm:text-sm"
                     style={{ fontFamily: 'Montserrat' }}
                   >
-                    경기도 부천시 길주로 17, 608호
+                    경기도 부천시 원미구 길주로 17, 6층 608호
                   </p>
                 </div>
               </div>
@@ -139,7 +137,7 @@ export default function Location() {
                     className="text-white text-[10px] xs:text-xs sm:text-sm"
                     style={{ fontFamily: 'Montserrat' }}
                   >
-                    010-1111-1111
+                    010-7634-4252
                   </p>
                 </div>
               </div>
@@ -171,7 +169,7 @@ export default function Location() {
                     className="text-white text-[10px] xs:text-xs sm:text-sm"
                     style={{ fontFamily: 'Montserrat' }}
                   >
-                    111@hani.co.kr
+                    braintouch94@naver.com
                   </p>
                 </div>
               </div>
@@ -210,7 +208,7 @@ export default function Location() {
                     className="text-white text-[10px] xs:text-xs"
                     style={{ fontFamily: 'Montserrat' }}
                   >
-                    경기도 부천시 길주로 17, 608호
+                    경기도 부천시 원미구 길주로 17, 6층 608호
                   </p>
                 </div>
               </div>
@@ -242,7 +240,7 @@ export default function Location() {
                     className="text-white text-[10px] xs:text-xs"
                     style={{ fontFamily: 'Montserrat' }}
                   >
-                    010-1111-1111
+                    010-7634-4252
                   </p>
                 </div>
               </div>
@@ -274,7 +272,7 @@ export default function Location() {
                     className="text-white text-[10px] xs:text-xs"
                     style={{ fontFamily: 'Montserrat' }}
                   >
-                    111@hani.co.kr
+                    braintouch94@naver.com
                   </p>
                 </div>
               </div>

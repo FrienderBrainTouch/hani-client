@@ -1,11 +1,9 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 export function useTabState(defaultTab: string, paramName: string = 'tab') {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   // URL에서 탭 파라미터 읽기, 없으면 기본값 사용
   const initialTab = searchParams.get(paramName) || defaultTab;
@@ -24,7 +22,7 @@ export function useTabState(defaultTab: string, paramName: string = 'tab') {
     setActiveTab(tabId);
     const params = new URLSearchParams(searchParams.toString());
     params.set(paramName, tabId);
-    router.push(`?${params.toString()}`, { scroll: false });
+    navigate(`?${params.toString()}`, { replace: true });
   };
 
   return [activeTab, handleTabChange] as const;

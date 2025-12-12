@@ -1,6 +1,6 @@
-'use client';
 
-import Image from 'next/image';
+
+
 
 export default function SocialValue() {
   const socialActivities = [
@@ -330,11 +330,11 @@ export default function SocialValue() {
                 <div className="absolute inset-0 bg-black/50" />
                 <div className="relative h-full p-4 xs:p-6 sm:p-8 flex flex-col justify-end gap-2 xs:gap-3">
                   <div className="flex items-center gap-2 xs:gap-3 w-fit">
-                    <Image
+                    <img
                       src={card.icon}
                       alt={card.title}
-                      width={30}
-                      height={30}
+                     
+                     
                       className="w-[30px] h-[30px] xs:w-[40px] xs:h-[40px] sm:w-[50px] sm:h-[50px]"
                     />
                     <span
