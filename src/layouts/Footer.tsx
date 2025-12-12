@@ -9,78 +9,67 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6 sm:gap-8 lg:gap-0">
           {/* 왼쪽 정보 영역 */}
           <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
+            {/* 상호명 및 대표 */}
+            <div className="flex flex-col gap-2">
+              <p
+                className="text-white text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Montserrat' }}
+              >
+                상호명: (주)하니 | 대표: 박세한
+              </p>
+            </div>
+
+            {/* 연락처 */}
+            <div className="flex flex-col gap-2">
+              <p
+                className="text-white text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Montserrat' }}
+              >
+                연락처: 010-7634-4252
+              </p>
+            </div>
+
+            {/* 사업자등록번호 및 이메일 */}
+            <div className="flex flex-col gap-2">
+              <p
+                className="text-white text-sm sm:text-base md:text-lg"
+                style={{ fontFamily: 'Montserrat' }}
+              >
+                사업자등록번호: 735-81-01967 | 이메일: braintouch94@naver.com
+              </p>
+            </div>
+
             {/* 주소 */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 lg:gap-24">
-              <span
-                className="text-white font-bold text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
-              >
-                주소
-              </span>
-              <span
+            <div className="flex flex-col gap-2">
+              <p
                 className="text-white text-sm sm:text-base md:text-lg"
                 style={{ fontFamily: 'Montserrat' }}
               >
-                경기도 부천시 길주로 17, 608호
-              </span>
+                주소: 경기도 부천시 원미구 길주로 17, 6층 608호
+              </p>
             </div>
 
-            {/* 대표 번호 */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 lg:gap-24">
-              <span
-                className="text-white font-bold text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
+            {/* 통신판매중개자 안내 */}
+            <div className="mt-4 sm:mt-6">
+              <p
+                className="text-white text-xs sm:text-sm md:text-[15px] leading-relaxed"
+                style={{ fontFamily: 'Montserrat', fontWeight: 300 }}
               >
-                대표 번호
-              </span>
-              <span
-                className="text-white text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
-              >
-                010-1111-2222
-              </span>
+                (주)하니는 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와 책임은 판매회원에게 있습니다.
+              </p>
             </div>
 
-            {/* 이메일 */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 lg:gap-24">
-              <span
-                className="text-white font-bold text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
-              >
-                이메일
-              </span>
-              <span
-                className="text-white text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
-              >
-                111@naver.com
-              </span>
-            </div>
+            {/* 구분선 */}
+            <div className="w-full h-[1px] bg-white/20 my-4 sm:my-6" />
 
-            {/* 사업자등록번호 */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 lg:gap-24">
-              <span
-                className="text-white font-bold text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
-              >
-                사업자등록번호
-              </span>
-              <span
-                className="text-white text-sm sm:text-base md:text-lg"
-                style={{ fontFamily: 'Montserrat' }}
-              >
-                1111-1111
-              </span>
-            </div>
-
-            {/* 하단 정보 */}
-            <div className="mt-4 sm:mt-6 md:mt-8">
-              <span
+            {/* 저작권 */}
+            <div>
+              <p
                 className="text-white text-xs sm:text-sm md:text-[15px]"
                 style={{ fontFamily: 'Montserrat', fontWeight: 300 }}
               >
-                © 2025. HANI. All rights reserved.
-              </span>
+                Copyright © 2024 HANI Inc. All rights reserved.
+              </p>
             </div>
           </div>
 
