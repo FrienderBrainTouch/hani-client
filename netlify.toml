@@ -1,8 +1,6 @@
-
-
 [build]
-command = "npm run build"
-publish = "dist"
+  command = "npm run build"
+  publish = "dist"
 
 # 중요: Next.js 플러그인이 설치되어 있어도 동작하지 않게 강제로 끕니다.
 [[plugins]]
